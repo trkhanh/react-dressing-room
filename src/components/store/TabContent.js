@@ -14,7 +14,7 @@ const TabContent = (props) => {
             id={index}></Tabpanel>
     })
     return (
-        <div className='tab-content row'>
+        <div className='tab-content'>
             {elementTabPane}
         </div>
     )
