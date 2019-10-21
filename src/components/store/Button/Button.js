@@ -3,7 +3,6 @@ import React from "react";
 const Button = (props) => {
     console.log('btnProp',props)
     return (
-      
         <div className='btn-group' role='group'>
             <br></br>
             <button

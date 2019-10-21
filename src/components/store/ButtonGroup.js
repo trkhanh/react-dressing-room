@@ -6,7 +6,6 @@ import buttonArr from "../../mock/buttonArray";
 export default class ButtonGroup extends Component {
     constructor(props) {
         super(props)
-
         this.state = {
             id: 0
         }
@@ -19,13 +18,12 @@ export default class ButtonGroup extends Component {
     };
 
     render() {
-       
         let ElementButton = buttonArr.map((item, index) => {
             return <Button key={index}
                 index={index}
                 btn={item}
                 changeTab={this.changeTab}
-                class={index === this.state.id ? 'btn-primary' : 'btn-default'}></Button>
+                class={index === this.state.id ? ' btn-primary' : ' btn-default'}></Button>
         })
 
         console.log('ElementButton',ElementButton);
