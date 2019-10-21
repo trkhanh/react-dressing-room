@@ -17,5 +17,12 @@ def getInitStyle():
         data = json.load(styles)
     return data
 
+@app.route("/get_shop_data")
+def getInitStyle():
+    filename = os.path.join(app.static_folder, 'shopData.json')
+    with open(filename) as styles:
+        data = json.load(styles)
+    return data
+
 if __name__ == '__main__':
     app.run(debug=True)
