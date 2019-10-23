@@ -27,4 +27,4 @@ def getShopData():
     return data
 
 if __name__ == '__main__':
-    app.run(host= '202.182.112.252', port=5005, debug=False)
+    app.run(host= '202.182.112.252', port=80, debug=False)
