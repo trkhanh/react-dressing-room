@@ -27,7 +27,7 @@ def getShopData():
     return data
 
 @app.route("/get_button_array")
-def getShopData():
+def getButtonArray():
     filename = os.path.join(app.static_folder, 'buttonArray.json')
     with open(filename) as styles:
         data = json.load(styles)
