@@ -74,4 +74,10 @@ pip install Flask
 
 ### setup
 FE: search API_GET_INIT_STYLE change thanh new API 
-BE:
+BE: Vo /server/server.py change HOST= "your_ip" || ip 
+
+node server.js
+
+python server.py
+python3 server.py
+py server.py
