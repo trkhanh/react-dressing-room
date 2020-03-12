@@ -3,7 +3,7 @@ import * as styleInit from '../../mock/initStyle';
 import Part from './contains/Part';
 
 
-const API_GET_INIT_STYLE = 'http://localhost:5000/get_init_style';
+const API_GET_INIT_STYLE = 'http://172.30.19.73:5005/get_init_style';
 
 export default class Contain extends Component {
     constructor(props) {
@@ -18,48 +18,48 @@ export default class Contain extends Component {
 
     loadStylesFromServer() {
         return fetch(API_GET_INIT_STYLE)
-        .then(res => res.json())
-        .then(
-            (result) => {
-                console.log('newStyle', result)
-                this.setState({
-                    isLoaded: false,
-                    styles: { ...result }
-                });
-            },
-            // Note: it's important to handle errors here
-            // instead of a catch() block so that we don't swallow
-            // exceptions from actual bugs in components.
-            (error) => {
-                this.setState({
-                    isLoaded: true,
-                    error
-                });
-            }
-        )
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    console.log('newStyle', result)
+                    this.setState({
+                        isLoaded: false,
+                        styles: { ...result }
+                    });
+                },
+                // Note: it's important to handle errors here
+                // instead of a catch() block so that we don't swallow
+                // exceptions from actual bugs in components.
+                (error) => {
+                    this.setState({
+                        isLoaded: true,
+                        error
+                    });
+                }
+            )
     }
 
     componentDidMount() {
         const THREE = 3000;
         const FOUR = 4000;
         const FIVE = 5000;
-        const removeIterTimeOut = (interval)=>{
+        const removeIterTimeOut = (interval) => {
             clearInterval(interval);
         }
         //BAI TAP
-        let iterID = setInterval(()=>{
-            let {isLoaded} = this.state; 
-            if(isLoaded){
+        let iterID = setInterval(() => {
+            let { isLoaded } = this.state;
+            if (isLoaded) {
                 console.log("Reconnect....!");
-            } 
+            }
 
-            if(!isLoaded){
+            if (!isLoaded) {
                 removeIterTimeOut(iterID);
                 console.log("Connected....!");
-              }
-            
+            }
+
             this.loadStylesFromServer();
-         }, THREE);
+        }, THREE);
     }
 
     render() {

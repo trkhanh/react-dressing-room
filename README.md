@@ -70,3 +70,8 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 ### install Flask 
 pip install Flask
  pip install -U flask-cors
+
+
+### setup
+FE: search API_GET_INIT_STYLE change thanh new API 
+BE:
